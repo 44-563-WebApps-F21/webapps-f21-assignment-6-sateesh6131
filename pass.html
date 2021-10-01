@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Assignment 6</title>
-        <body>
-            <h1>pass phrase by Naga Sateesh Reddy </h1>
-            <h2>Getting input</h2>
-            <form>
-                <label for="form1_age">What is your age </label>
-                <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
-            
-                <label for="form1_nick">What is your nickname </label>
-                <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
-            
-                <input type="button" onclick="resolveForm()" value="Get values from form">
-            </form>
-            
-            
-            <p id="result">This text will be replaced </p>
-            
-            <script> 
-            var coreect=0;
-            var wrong=0;
-            
-            function resolveForm (){
-                console.log("Getting form values")
-                age = document.getElementById("form1_age").value
-                nick = document.getElementById("form1_nick").value
-                
-                out = document.getElementById("result")
-                if(age == nick){
-                    coreect++
-                    alert("Access allowed");
-                    out.innerHTML = "Correct :" +correct ;
-                } else {
-                    wrong++;
-                    alert("Access denied");
-                    out.innerHTML = "Wrong :" + wrong;
-                }
-            }
-            </script>
-        
-        </body>
-        
-    </head>
+ <head>
+     <title>Assignment- 6 </title>
+ </head>
+<body>
+
+<h2>Pass phrase by Naga sateesh Reddy</h2>
+
+<form>
+    <label for="form1_secretPhrase">Enter the secret phrase </label>
+    <input type ="password" id="form1_secretPhrase" name="form1_secretPhrase" min=10 max=50 step=2 value="Let me in"> <br>
+
+    <label for="form1_phraseCheck">Enter a phrase</label>
+    <input type ="text" id="form1_phraseCheck" name="form1_phraseCheck" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<p id="result"> </p>
+
+<script> 
+var correct = 0;
+    var wrong = 0;
+function processPhrase (){ 
+    
+    console.log("Getting form values")
+    secretPhrase = document.getElementById("form1_secretPhrase").value
+    phraseCheck = document.getElementById("form1_phraseCheck").value 
+
+    if(secretPhrase == phraseCheck){ 
+        correct++; 
+        alert("Access allowed");
+        document.getElementById("result").innerHTML = "The value of correct is: " + correct;
+    } else {
+        wrong++;
+        alert("Access denied");
+        document.getElementById("result").innerHTML = "The value of wrong is: " + wrong;
+      
+    }
+}
+</script>  
+
+
+</body>
 </html>
