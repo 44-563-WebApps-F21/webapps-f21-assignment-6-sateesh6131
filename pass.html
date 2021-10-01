@@ -19,18 +19,23 @@
             <p id="result">This text will be replaced </p>
             
             <script> 
+            var coreect=0;
+            var wrong=0;
             
             function resolveForm (){
                 console.log("Getting form values")
                 age = document.getElementById("form1_age").value
                 nick = document.getElementById("form1_nick").value
-                confirmed = confirm("Are these the values? "+age+" and "+nick)
                 
                 out = document.getElementById("result")
-                if(confirmed){
-                    out.innerHTML = "Values were confirmed"
+                if(age == nick){
+                    coreect++
+                    alert("Access allowed");
+                    out.innerHTML = "Correct :" +correct ;
                 } else {
-                    out.innerHTML = "Values were not confirmed"
+                    wrong++;
+                    alert("Access denied");
+                    out.innerHTML = "Wrong :" + wrong;
                 }
             }
             </script>
