@@ -38,13 +38,20 @@ function processPhrase (){
     resultDiv = document.getElementById("result")
     if(spValue==phraseValue){
         alert("Access allowed");
+        correct=correct+1;
+    } else if(wrong>=2){
+       document.getElementById("Account").onclick=lockAccount()
 
-    correct=correct+1;
-    }
-     else{
+      }
+    
+    else{   
         alert("Access denied");
-        wrong=wrong+1;
-    }  
+        wrong=wrong+1;   
+    }
+    
+    function lockAccount(){
+        alert("Account locked")
+    }
     resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
 }
 var usingImage=1;
