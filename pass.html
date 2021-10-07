@@ -10,7 +10,7 @@
 <form>
     <label for="secretphase">Enter the secret phrase </label>
 
-    <input type ="password" id="secretphase" value ="sumanth"> <br>
+    <input type ="password" id="secretphase" value ="Let me in"> <br>
 
     <label for="phrase">Enter a phrase </label>
 
@@ -22,7 +22,7 @@
 <div id="result"></div>
 <br><br>
 <div class="container">
-    <img src= "Images/tiger.jpg" id="tiger" alt="Leopard" height="200" width="200" onclick="newImage()">
+    <img src= "Images/dog.jpg" id="dog" alt="dog" height="200" width="200" onclick="newImage()">
 </div>
 
 <script> 
@@ -49,16 +49,20 @@ function processPhrase (){
 }
 var usingImage=1;
     function newImage(){
-        Image=document.getElementById("tiger")
+        Image=document.getElementById("dog")
         switch(usingImage){
-            case 1 : Image.src = "Images/nileCrocodile.jpg"
+            case 1 : Image.src = "images/tiger.jpg"
                      usingImage =usingImage +1;
                      break;
-            case 2 : Image.src = "Images/tiger.jpg"
+            case 2 : Image.src = "images/numbat.jpg"
                      usingImage =usingImage +1;
                      break; 
-            case 3 : Image.src = "images/pinscher.jpg"
+            case 3 : Image.src = "images/dog.jpg"
                      usingImage =usingImage +1;
                      break;
         }
     }
+
+    </script>
+    </body>
+    </html>
