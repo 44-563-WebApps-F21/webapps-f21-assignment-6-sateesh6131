@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html>
- <head>
-     <title>Assignment- 6 </title>
- </head>
+ 
 <body>
-
-<h2>Pass phrase by Naga sateesh Reddy</h2>
+    <head>
+        <title>Pass page</title>
+    </head>
+        <h2>Pass phrase by Naga Sateesh Reddy Dantla</h2>
 
 <form>
-    <label for="form1_secretPhrase">Enter the secret phrase </label>
-    <input type ="password" id="form1_secretPhrase" name="form1_secretPhrase" min=10 max=50 step=2 value="Let me in"> <br>
+    <label for="secretphase">Enter the secret phrase </label>
 
-    <label for="form1_phraseCheck">Enter a phrase</label>
-    <input type ="text" id="form1_phraseCheck" name="form1_phraseCheck" autofocus> <br>
+    <input type ="password" id="secretphase" value ="sumanth"> <br>
 
-    <input type="button" onclick="processPhrase()" value="Check the phrase">
+    <label for="phrase">Enter a phrase </label>
+
+    <input type ="text" id="phrase"  autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase"/>
 </form>
 
-
-<p id="result"> </p>
+<div id="result"></div>
+<br><br>
+<div class="container">
+    <img src= "Images/tiger.jpg" id="tiger" alt="Leopard" height="200" width="200" onclick="newImage()">
+</div>
 
 <script> 
-var correct = 0;
-    var wrong = 0;
-function processPhrase (){ 
-    
-    console.log("Getting form values")
-    secretPhrase = document.getElementById("form1_secretPhrase").value
-    phraseCheck = document.getElementById("form1_phraseCheck").value 
 
-    if(secretPhrase == phraseCheck){ 
-        correct++; 
+var correct=0;
+var wrong=0;
+
+function processPhrase (){
+    spValue = document.getElementById("secretphase").value
+
+    phraseValue = document.getElementById("phrase").value
+
+    resultDiv = document.getElementById("result")
+    if(spValue==phraseValue){
         alert("Access allowed");
-        document.getElementById("result").innerHTML = "The value of correct is: " + correct;
-    } else {
-        wrong++;
-        alert("Access denied");
-        document.getElementById("result").innerHTML = "The value of wrong is: " + wrong;
-      
+
+    correct=correct+1;
     }
+     else{
+        alert("Access denied");
+        wrong=wrong+1;
+    }  
+    resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
 }
-</script>  
-
-
-</body>
-</html>
+var usingImage=1;
+    function newImage(){
+        Image=document.getElementById("tiger")
+        switch(usingImage){
+            case 1 : Image.src = "Images/nileCrocodile.jpg"
+                     usingImage =usingImage +1;
+                     break;
+            case 2 : Image.src = "Images/tiger.jpg"
+                     usingImage =usingImage +1;
+                     break; 
+            case 3 : Image.src = "images/pinscher.jpg"
+                     usingImage =usingImage +1;
+                     break;
+        }
+    }
